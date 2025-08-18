@@ -1,9 +1,8 @@
 import { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Sphere, MeshDistortMaterial } from '@react-three/drei';
 import * as THREE from 'three';
 
-const FloatingOrb = ({ position, color, ...props }: any) => {
+const FloatingOrb = ({ position, color, scale = 1 }: { position: [number, number, number], color: string, scale?: number }) => {
   const mesh = useRef<THREE.Mesh>(null);
   
   useFrame((state) => {
@@ -15,16 +14,16 @@ const FloatingOrb = ({ position, color, ...props }: any) => {
   });
 
   return (
-    <Sphere ref={mesh} position={position} args={[1, 32, 32]} {...props}>
-      <MeshDistortMaterial
+    <mesh ref={mesh} position={position} scale={scale}>
+      <sphereGeometry args={[1, 32, 32]} />
+      <meshStandardMaterial
         color={color}
-        attach="material"
-        distort={0.3}
-        speed={2}
         roughness={0.2}
         metalness={0.8}
+        emissive={color}
+        emissiveIntensity={0.2}
       />
-    </Sphere>
+    </mesh>
   );
 };
 
@@ -32,19 +31,19 @@ const ParticleField = () => {
   const points = useRef<THREE.Points>(null);
   
   const particlesPosition = useMemo(() => {
-    const positions = new Float32Array(1000 * 3);
-    for (let i = 0; i < 1000; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * 20;
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 20;
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 20;
+    const positions = new Float32Array(500 * 3);
+    for (let i = 0; i < 500; i++) {
+      positions[i * 3] = (Math.random() - 0.5) * 15;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 15;
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 15;
     }
     return positions;
   }, []);
 
   useFrame((state) => {
     if (points.current) {
-      points.current.rotation.x = state.clock.elapsedTime * 0.05;
-      points.current.rotation.y = state.clock.elapsedTime * 0.05;
+      points.current.rotation.x = state.clock.elapsedTime * 0.02;
+      points.current.rotation.y = state.clock.elapsedTime * 0.03;
     }
   });
 
@@ -58,7 +57,7 @@ const ParticleField = () => {
           itemSize={3}
         />
       </bufferGeometry>
-      <pointsMaterial size={0.05} color="#00CED1" transparent opacity={0.6} />
+      <pointsMaterial size={0.03} color="#00CED1" transparent opacity={0.6} />
     </points>
   );
 };
@@ -66,10 +65,15 @@ const ParticleField = () => {
 const ThreeDScene = () => {
   return (
     <div className="absolute inset-0 z-0">
-      <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1} color="#00CED1" />
-        <pointLight position={[-10, -10, -10]} intensity={0.5} color="#9932CC" />
+      <Canvas 
+        camera={{ position: [0, 0, 5], fov: 75 }}
+        dpr={[1, 2]}
+        performance={{ min: 0.5 }}
+        onError={(error) => console.error('Canvas error:', error)}
+      >
+        <ambientLight intensity={0.4} />
+        <pointLight position={[10, 10, 10]} intensity={0.8} color="#00CED1" />
+        <pointLight position={[-10, -10, -10]} intensity={0.4} color="#9932CC" />
         
         {/* Main Central Orb */}
         <FloatingOrb 
