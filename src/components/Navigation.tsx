@@ -4,8 +4,10 @@ import { List, X } from 'phosphor-react';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Nav entrance animation
@@ -14,6 +16,48 @@ const Navigation = () => {
       { y: 0, opacity: 1, duration: 1, delay: 3, ease: "power2.out" }
     );
   }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const newIsScrolled = scrollY > 50;
+      
+      if (newIsScrolled !== isScrolled) {
+        setIsScrolled(newIsScrolled);
+        
+        if (containerRef.current) {
+          if (newIsScrolled) {
+            // Collapse to center
+            gsap.to(containerRef.current, {
+              maxWidth: "600px",
+              margin: "0 auto",
+              paddingLeft: "1.5rem",
+              paddingRight: "1.5rem",
+              paddingTop: "0.75rem",
+              paddingBottom: "0.75rem",
+              duration: 0.4,
+              ease: "power2.out"
+            });
+          } else {
+            // Expand to full width
+            gsap.to(containerRef.current, {
+              maxWidth: "1200px",
+              margin: "0 auto",
+              paddingLeft: "1.5rem",
+              paddingRight: "1.5rem", 
+              paddingTop: "1rem",
+              paddingBottom: "1rem",
+              duration: 0.4,
+              ease: "power2.out"
+            });
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isScrolled]);
 
   useEffect(() => {
     if (isOpen) {
@@ -52,7 +96,7 @@ const Navigation = () => {
         ref={navRef}
         className="fixed top-0 left-0 right-0 z-40 glass border-b border-glass-white/10"
       >
-        <div className="container mx-auto px-6 py-4">
+        <div ref={containerRef} className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="text-xl font-bold text-glow-cyan">
