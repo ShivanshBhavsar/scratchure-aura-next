@@ -8,6 +8,8 @@ const Navigation = () => {
   const navRef = useRef<HTMLElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const logoRef = useRef<HTMLDivElement>(null);
+  const navItemsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Nav entrance animation
@@ -25,40 +27,60 @@ const Navigation = () => {
       if (newIsScrolled !== isScrolled) {
         setIsScrolled(newIsScrolled);
         
-        if (containerRef.current) {
-          if (newIsScrolled) {
-            // Collapse to center with rounded corners
-            gsap.to(containerRef.current, {
-              maxWidth: "500px",
-              margin: "0.5rem auto",
-              paddingLeft: "1.5rem",
-              paddingRight: "1.5rem",
-              paddingTop: "0.75rem",
-              paddingBottom: "0.75rem",
-              borderRadius: "2rem",
-              backdropFilter: "blur(20px)",
-              backgroundColor: "rgba(255, 255, 255, 0.05)",
-              border: "1px solid rgba(255, 255, 255, 0.1)",
-              duration: 0.6,
-              ease: "power2.out"
-            });
-          } else {
-            // Expand to full width with sharp corners
-            gsap.to(containerRef.current, {
-              maxWidth: "1200px",
-              margin: "0 auto",
-              paddingLeft: "1.5rem",
-              paddingRight: "1.5rem", 
-              paddingTop: "1rem",
-              paddingBottom: "1rem",
-              borderRadius: "0px",
-              backdropFilter: "blur(10px)",
-              backgroundColor: "transparent",
-              border: "none",
-              duration: 0.6,
-              ease: "power2.out"
-            });
-          }
+        const tl = gsap.timeline();
+        
+        if (newIsScrolled) {
+          // Collapse animation - move elements to center
+          tl.to(containerRef.current, {
+            maxWidth: "500px",
+            margin: "0.5rem auto",
+            paddingLeft: "1.5rem",
+            paddingRight: "1.5rem",
+            paddingTop: "0.75rem",
+            paddingBottom: "0.75rem",
+            borderRadius: "2rem",
+            backdropFilter: "blur(20px)",
+            backgroundColor: "rgba(255, 255, 255, 0.05)",
+            border: "1px solid rgba(255, 255, 255, 0.1)",
+            duration: 0.8,
+            ease: "power2.out"
+          })
+          .to(logoRef.current, {
+            transform: "translateX(20px)",
+            duration: 0.6,
+            ease: "power2.out"
+          }, "<")
+          .to(navItemsRef.current, {
+            transform: "translateX(-20px)",
+            duration: 0.6,
+            ease: "power2.out"
+          }, "<");
+        } else {
+          // Expand animation - move elements back to original positions
+          tl.to(containerRef.current, {
+            maxWidth: "1200px",
+            margin: "0 auto",
+            paddingLeft: "1.5rem",
+            paddingRight: "1.5rem", 
+            paddingTop: "1rem",
+            paddingBottom: "1rem",
+            borderRadius: "0px",
+            backdropFilter: "blur(10px)",
+            backgroundColor: "transparent",
+            border: "none",
+            duration: 0.8,
+            ease: "power2.out"
+          })
+          .to(logoRef.current, {
+            transform: "translateX(0px)",
+            duration: 0.6,
+            ease: "power2.out"
+          }, "<")
+          .to(navItemsRef.current, {
+            transform: "translateX(0px)",
+            duration: 0.6,
+            ease: "power2.out"
+          }, "<");
         }
       }
     };
@@ -107,12 +129,12 @@ const Navigation = () => {
         <div ref={containerRef} className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <div className="text-xl font-bold text-glow-cyan">
+            <div ref={logoRef} className="text-xl font-bold text-glow-cyan">
               SCRATCHURE
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div ref={navItemsRef} className="hidden md:flex items-center space-x-8">
               {navItems.map((item, index) => (
                 <button
                   key={index}
