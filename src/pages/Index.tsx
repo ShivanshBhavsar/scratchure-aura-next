@@ -7,6 +7,7 @@ import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import CustomCursor from '../components/CustomCursor';
+import EnergyBlob from '../components/EnergyBlob';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -32,6 +33,9 @@ const Index = () => {
     <>
       {/* Custom Cursor */}
       <CustomCursor />
+      
+      {/* Energy Blob */}
+      <EnergyBlob />
       
       {/* Preloader */}
       {isLoading && <Preloader onComplete={handlePreloaderComplete} />}

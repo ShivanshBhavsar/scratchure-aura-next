@@ -27,19 +27,23 @@ const Navigation = () => {
         
         if (containerRef.current) {
           if (newIsScrolled) {
-            // Collapse to center
+            // Collapse to center with rounded corners
             gsap.to(containerRef.current, {
-              maxWidth: "600px",
-              margin: "0 auto",
+              maxWidth: "500px",
+              margin: "0.5rem auto",
               paddingLeft: "1.5rem",
               paddingRight: "1.5rem",
               paddingTop: "0.75rem",
               paddingBottom: "0.75rem",
-              duration: 0.4,
+              borderRadius: "2rem",
+              backdropFilter: "blur(20px)",
+              backgroundColor: "rgba(255, 255, 255, 0.05)",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
+              duration: 0.6,
               ease: "power2.out"
             });
           } else {
-            // Expand to full width
+            // Expand to full width with sharp corners
             gsap.to(containerRef.current, {
               maxWidth: "1200px",
               margin: "0 auto",
@@ -47,7 +51,11 @@ const Navigation = () => {
               paddingRight: "1.5rem", 
               paddingTop: "1rem",
               paddingBottom: "1rem",
-              duration: 0.4,
+              borderRadius: "0px",
+              backdropFilter: "blur(10px)",
+              backgroundColor: "transparent",
+              border: "none",
+              duration: 0.6,
               ease: "power2.out"
             });
           }
