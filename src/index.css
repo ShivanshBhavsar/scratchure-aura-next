@@ -2,41 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Futuristic IT Company Design System - Inspired by space tech aesthetics
+All colors MUST be HSL. Glassmorphic and neon-glow focused.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base Dark Space Theme */
+    --background: 220 25% 3%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Glassmorphic Cards */
+    --card: 220 25% 8%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 25% 8%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Cyan Tech Primary */
+    --primary: 187 85% 65%;
+    --primary-foreground: 220 25% 3%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Purple Tech Secondary */
+    --secondary: 260 65% 35%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted Glass */
+    --muted: 220 25% 12%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Neon Accent */
+    --accent: 280 85% 70%;
+    --accent-foreground: 220 25% 3%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 85% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Glass Borders */
+    --border: 220 25% 15%;
+    --input: 220 25% 12%;
+    --ring: 187 85% 65%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom Futuristic Colors */
+    --cyber-cyan: 187 85% 65%;
+    --cyber-purple: 260 65% 35%;
+    --cyber-pink: 320 85% 70%;
+    --neon-blue: 220 85% 70%;
+    --space-dark: 220 25% 3%;
+    --glass-white: 210 40% 98%;
+    
+    /* Gradients */
+    --gradient-cyber: linear-gradient(135deg, hsl(187 85% 65% / 0.3), hsl(260 65% 35% / 0.3));
+    --gradient-hero: linear-gradient(180deg, hsl(220 25% 3%), hsl(220 25% 8%));
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(187 85% 65% / 0.3), transparent 70%);
+    
+    /* Glass Effects */
+    --glass-bg: hsl(220 25% 8% / 0.1);
+    --glass-border: hsl(210 40% 98% / 0.1);
+    --glass-shadow: 0 8px 32px hsl(220 25% 3% / 0.4);
+    
+    /* Neon Glows */
+    --glow-cyan: 0 0 20px hsl(187 85% 65% / 0.5);
+    --glow-purple: 0 0 20px hsl(260 65% 35% / 0.5);
+    --glow-pink: 0 0 20px hsl(320 85% 70% / 0.5);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +130,109 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter overflow-x-hidden;
+    cursor: none;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--space-dark));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--cyber-cyan));
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--cyber-purple));
+  }
+}
+
+@layer components {
+  /* Glass Morphism */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+  
+  /* Glow Effects */
+  .glow-cyan {
+    box-shadow: var(--glow-cyan);
+  }
+  
+  .glow-purple {
+    box-shadow: var(--glow-purple);
+  }
+  
+  .glow-pink {
+    box-shadow: var(--glow-pink);
+  }
+  
+  /* Text Glow */
+  .text-glow-cyan {
+    text-shadow: 0 0 10px hsl(var(--cyber-cyan) / 0.8);
+  }
+  
+  .text-glow-purple {
+    text-shadow: 0 0 10px hsl(var(--cyber-purple) / 0.8);
+  }
+  
+  /* Floating Animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  /* Pulse Glow */
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes pulseGlow {
+    from { box-shadow: 0 0 20px hsl(var(--cyber-cyan) / 0.3); }
+    to { box-shadow: 0 0 40px hsl(var(--cyber-cyan) / 0.8); }
+  }
+  
+  /* Blur to Clear Animation */
+  .blur-to-clear {
+    filter: blur(10px);
+    opacity: 0;
+    animation: blurToClear 1s ease-out forwards;
+  }
+  
+  @keyframes blurToClear {
+    to {
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+
+  /* Custom Cursor */
+  .custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: hsl(var(--cyber-cyan) / 0.6);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: all 0.3s ease;
+  }
+  
+  .custom-cursor.hover {
+    transform: scale(2);
+    background: hsl(var(--cyber-pink) / 0.8);
   }
 }

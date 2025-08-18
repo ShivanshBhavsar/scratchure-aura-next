@@ -18,6 +18,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'inter': ['Inter', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -52,6 +55,13 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Custom Futuristic Colors
+				'cyber-cyan': 'hsl(var(--cyber-cyan))',
+				'cyber-purple': 'hsl(var(--cyber-purple))',
+				'cyber-pink': 'hsl(var(--cyber-pink))',
+				'neon-blue': 'hsl(var(--neon-blue))',
+				'space-dark': 'hsl(var(--space-dark))',
+				'glass-white': 'hsl(var(--glass-white))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -62,6 +72,11 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			backgroundImage: {
+				'gradient-cyber': 'var(--gradient-cyber)',
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-glow': 'var(--gradient-glow)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

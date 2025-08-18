@@ -1,13 +1,58 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState, useEffect } from 'react';
+import Preloader from '../components/Preloader';
+import Navigation from '../components/Navigation';
+import Hero from '../components/Hero';
+import About from '../components/About';
+import Projects from '../components/Projects';
+import Contact from '../components/Contact';
+import Footer from '../components/Footer';
+import CustomCursor from '../components/CustomCursor';
 
 const Index = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handlePreloaderComplete = () => {
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    // Disable scrolling during preloader
+    if (isLoading) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isLoading]);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <>
+      {/* Custom Cursor */}
+      <CustomCursor />
+      
+      {/* Preloader */}
+      {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
+      
+      {/* Main Content */}
+      <div className={`transition-opacity duration-1000 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+        {/* Navigation */}
+        <Navigation />
+        
+        {/* Main Sections */}
+        <main>
+          <Hero />
+          <About />
+          <Projects />
+          <Contact />
+        </main>
+        
+        {/* Footer */}
+        <Footer />
       </div>
-    </div>
+    </>
   );
 };
 
