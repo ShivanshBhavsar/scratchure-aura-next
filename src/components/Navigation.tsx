@@ -32,32 +32,42 @@ const Navigation = () => {
         if (newIsScrolled) {
           // Collapse animation - move elements to center
           tl.to(containerRef.current, {
-            maxWidth: "500px",
+            maxWidth: "400px",
             margin: "0.5rem auto",
-            paddingLeft: "1.5rem",
-            paddingRight: "1.5rem",
-            paddingTop: "0.75rem",
-            paddingBottom: "0.75rem",
+            paddingLeft: "1rem",
+            paddingRight: "1rem",
+            paddingTop: "0.5rem",
+            paddingBottom: "0.5rem",
             borderRadius: "2rem",
             backdropFilter: "blur(20px)",
             backgroundColor: "rgba(255, 255, 255, 0.05)",
             border: "1px solid rgba(255, 255, 255, 0.1)",
-            duration: 0.8,
-            ease: "power2.out"
+            duration: 0.9,
+            ease: "power3.out"
           })
           .to(logoRef.current, {
-            transform: "translateX(20px)",
-            duration: 0.6,
-            ease: "power2.out"
-          }, "<")
+            transform: "translateX(40px)",
+            duration: 0.9,
+            ease: "power3.out"
+          }, "<+0.1")
           .to(navItemsRef.current, {
-            transform: "translateX(-20px)",
-            duration: 0.6,
-            ease: "power2.out"
+            transform: "translateX(-40px) scale(0.9)",
+            duration: 0.9,
+            ease: "power3.out"
           }, "<");
         } else {
           // Expand animation - move elements back to original positions
-          tl.to(containerRef.current, {
+          tl.to(logoRef.current, {
+            transform: "translateX(0px)",
+            duration: 0.9,
+            ease: "power3.out"
+          })
+          .to(navItemsRef.current, {
+            transform: "translateX(0px) scale(1)",
+            duration: 0.9,
+            ease: "power3.out"
+          }, "<")
+          .to(containerRef.current, {
             maxWidth: "1200px",
             margin: "0 auto",
             paddingLeft: "1.5rem",
@@ -68,19 +78,9 @@ const Navigation = () => {
             backdropFilter: "blur(10px)",
             backgroundColor: "transparent",
             border: "none",
-            duration: 0.8,
-            ease: "power2.out"
-          })
-          .to(logoRef.current, {
-            transform: "translateX(0px)",
-            duration: 0.6,
-            ease: "power2.out"
-          }, "<")
-          .to(navItemsRef.current, {
-            transform: "translateX(0px)",
-            duration: 0.6,
-            ease: "power2.out"
-          }, "<");
+            duration: 0.9,
+            ease: "power3.out"
+          }, "<+0.1");
         }
       }
     };
