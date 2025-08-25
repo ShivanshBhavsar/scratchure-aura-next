@@ -4,12 +4,8 @@ import { List, X } from 'phosphor-react';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const logoRef = useRef<HTMLDivElement>(null);
-  const navItemsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Nav entrance animation
@@ -19,75 +15,6 @@ const Navigation = () => {
     );
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const newIsScrolled = scrollY > 50;
-      
-      if (newIsScrolled !== isScrolled) {
-        setIsScrolled(newIsScrolled);
-        
-        const tl = gsap.timeline();
-        
-        if (newIsScrolled) {
-          // Collapse animation - move elements to center
-          tl.to(containerRef.current, {
-            maxWidth: "400px",
-            margin: "0.5rem auto",
-            paddingLeft: "1rem",
-            paddingRight: "1rem",
-            paddingTop: "0.5rem",
-            paddingBottom: "0.5rem",
-            borderRadius: "2rem",
-            backdropFilter: "blur(20px)",
-            backgroundColor: "rgba(255, 255, 255, 0.05)",
-            border: "1px solid rgba(255, 255, 255, 0.1)",
-            duration: 0.9,
-            ease: "power3.out"
-          })
-          .to(logoRef.current, {
-            transform: "translateX(40px)",
-            duration: 0.9,
-            ease: "power3.out"
-          }, "<+0.1")
-          .to(navItemsRef.current, {
-            transform: "translateX(-40px) scale(0.9)",
-            duration: 0.9,
-            ease: "power3.out"
-          }, "<");
-        } else {
-          // Expand animation - move elements back to original positions
-          tl.to(logoRef.current, {
-            transform: "translateX(0px)",
-            duration: 0.9,
-            ease: "power3.out"
-          })
-          .to(navItemsRef.current, {
-            transform: "translateX(0px) scale(1)",
-            duration: 0.9,
-            ease: "power3.out"
-          }, "<")
-          .to(containerRef.current, {
-            maxWidth: "1200px",
-            margin: "0 auto",
-            paddingLeft: "1.5rem",
-            paddingRight: "1.5rem", 
-            paddingTop: "1rem",
-            paddingBottom: "1rem",
-            borderRadius: "0px",
-            backdropFilter: "blur(10px)",
-            backgroundColor: "transparent",
-            border: "none",
-            duration: 0.9,
-            ease: "power3.out"
-          }, "<+0.1");
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isScrolled]);
 
   useEffect(() => {
     if (isOpen) {
@@ -126,15 +53,15 @@ const Navigation = () => {
         ref={navRef}
         className="fixed top-0 left-0 right-0 z-40 glass border-b border-glass-white/10"
       >
-        <div ref={containerRef} className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <div ref={logoRef} className="text-xl font-bold text-glow-cyan">
+            <div className="text-xl font-bold text-glow-cyan">
               SCRATCHURE
             </div>
 
             {/* Desktop Navigation */}
-            <div ref={navItemsRef} className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-8">
               {navItems.map((item, index) => (
                 <button
                   key={index}
