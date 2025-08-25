@@ -4,10 +4,8 @@ import { List, X } from 'phosphor-react';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Nav entrance animation
@@ -16,53 +14,6 @@ const Navigation = () => {
       { y: 0, opacity: 1, duration: 1, delay: 3, ease: "power2.out" }
     );
   }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const heroHeight = window.innerHeight; // Assuming hero takes full viewport height
-      const newIsScrolled = scrollY > heroHeight * 0.8; // Trigger when 80% past hero
-      
-      if (newIsScrolled !== isScrolled) {
-        setIsScrolled(newIsScrolled);
-        
-        if (newIsScrolled) {
-          // Collapse animation - reduce width and center
-          gsap.to(containerRef.current, {
-            maxWidth: "500px",
-            margin: "0.75rem auto",
-            paddingLeft: "1.5rem",
-            paddingRight: "1.5rem",
-            paddingTop: "0.75rem",
-            paddingBottom: "0.75rem",
-            borderRadius: "2rem",
-            backgroundColor: "hsl(var(--space-dark) / 0.95)",
-            border: "1px solid hsl(var(--glass-white) / 0.1)",
-            duration: 0.6,
-            ease: "power2.out"
-          });
-        } else {
-          // Expand animation - back to original
-          gsap.to(containerRef.current, {
-            maxWidth: "1200px",
-            margin: "0 auto",
-            paddingLeft: "1.5rem",
-            paddingRight: "1.5rem", 
-            paddingTop: "1rem",
-            paddingBottom: "1rem",
-            borderRadius: "0px",
-            backgroundColor: "transparent",
-            border: "none",
-            duration: 0.6,
-            ease: "power2.out"
-          });
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isScrolled]);
 
 
   useEffect(() => {
@@ -102,7 +53,7 @@ const Navigation = () => {
         ref={navRef}
         className="fixed top-0 left-0 right-0 z-40 glass border-b border-glass-white/10"
       >
-        <div ref={containerRef} className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="text-xl font-bold text-glow-cyan">
