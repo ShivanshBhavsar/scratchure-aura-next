@@ -19,51 +19,35 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Dashboard",
-      description: "Modern e-commerce analytics platform with real-time data visualization and AI-powered insights.",
+      title: "Shabella",
+      description: "A skincare e-commerce website with modern design and seamless shopping experience.",
       image: project1,
-      tech: ["React", "TypeScript", "D3.js", "Node.js"],
-      category: "Web Application"
+      tech: ["React", "TypeScript", "Tailwind", "Node.js"],
+      category: "E-commerce"
     },
     {
       id: 2,
-      title: "FinTech Mobile App",
-      description: "Cryptocurrency trading platform with advanced charting and portfolio management features.",
+      title: "POS Walla",
+      description: "A Point of Sale software with inventory management and sales analytics features.",
       image: project2,
-      tech: ["React Native", "Python", "FastAPI", "PostgreSQL"],
-      category: "Mobile Application"
+      tech: ["React", "Node.js", "MongoDB", "Express"],
+      category: "Software"
     },
     {
       id: 3,
-      title: "Cloud Infrastructure",
-      description: "Scalable DevOps solution with automated deployment and monitoring capabilities.",
+      title: "Play Photo Creation",
+      description: "A photography portfolio website showcasing creative visual storytelling.",
       image: project3,
-      tech: ["AWS", "Docker", "Kubernetes", "Terraform"],
-      category: "DevOps"
+      tech: ["React", "Next.js", "Framer Motion", "Tailwind"],
+      category: "Portfolio"
     },
     {
       id: 4,
-      title: "AI Analytics Platform",
-      description: "Machine learning dashboard for predictive analytics and data science workflows.",
+      title: "Hiranyam Ayurveda",
+      description: "Ayurvedic skincare e-commerce platform with traditional wellness products.",
       image: project4,
-      tech: ["Python", "TensorFlow", "React", "MongoDB"],
-      category: "AI/ML"
-    },
-    {
-      id: 5,
-      title: "Blockchain Exchange",
-      description: "Decentralized trading platform with smart contract integration and DeFi features.",
-      image: project5,
-      tech: ["Solidity", "Web3.js", "Next.js", "Ethereum"],
-      category: "Blockchain"
-    },
-    {
-      id: 6,
-      title: "IoT Smart Home",
-      description: "Comprehensive home automation system with voice control and energy optimization.",
-      image: project6,
-      tech: ["IoT", "MQTT", "React", "Firebase"],
-      category: "IoT"
+      tech: ["React", "TypeScript", "Stripe", "MongoDB"],
+      category: "E-commerce"
     }
   ];
 
