@@ -87,7 +87,9 @@ const Footer = () => {
           <div className="lg:col-span-1 flex justify-center lg:justify-end">
             <div className="flex gap-4">
               <a 
-                href="#" 
+                href="https://www.instagram.com/scratchure_technologies/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="glass p-3 rounded-lg hover:glow-cyan transition-all duration-300 hover:scale-110 group"
               >
                 <InstagramLogo 
@@ -96,7 +98,9 @@ const Footer = () => {
                 />
               </a>
               <a 
-                href="#" 
+                href="https://www.linkedin.com/in/scratchure-technologies-588b2437a/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="glass p-3 rounded-lg hover:glow-cyan transition-all duration-300 hover:scale-110 group"
               >
                 <LinkedinLogo 

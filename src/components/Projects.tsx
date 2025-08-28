@@ -23,7 +23,8 @@ const Projects = () => {
       description: "A skincare e-commerce website with modern design and seamless shopping experience.",
       image: project1,
       tech: ["React", "TypeScript", "Tailwind", "Node.js"],
-      category: "E-commerce"
+      category: "E-commerce",
+      link: "https://www.shabellaa.com/"
     },
     {
       id: 2,
@@ -31,7 +32,8 @@ const Projects = () => {
       description: "A Point of Sale software with inventory management and sales analytics features.",
       image: project2,
       tech: ["React", "Node.js", "MongoDB", "Express"],
-      category: "Software"
+      category: "Software",
+      link: "https://www.poswalla.com/"
     },
     {
       id: 3,
@@ -47,7 +49,8 @@ const Projects = () => {
       description: "Ayurvedic skincare e-commerce platform with traditional wellness products.",
       image: project4,
       tech: ["React", "TypeScript", "Stripe", "MongoDB"],
-      category: "E-commerce"
+      category: "E-commerce",
+      link: "https://hiranyamayurveda.com/"
     }
   ];
 
@@ -117,6 +120,7 @@ const Projects = () => {
               <div
                 key={project.id}
                 className="flex-shrink-0 w-80 glass rounded-xl overflow-hidden hover:glow-cyan transition-all duration-500 group cursor-pointer transform hover:scale-105"
+                onClick={() => project.link && window.open(project.link, '_blank')}
               >
                 <div className="relative overflow-hidden">
                   <img 
@@ -172,6 +176,7 @@ const Projects = () => {
               <div
                 key={project.id}
                 className="glass rounded-xl overflow-hidden hover:glow-cyan transition-all duration-500 group cursor-pointer"
+                onClick={() => project.link && window.open(project.link, '_blank')}
               >
                 <div className="relative overflow-hidden">
                   <img 
