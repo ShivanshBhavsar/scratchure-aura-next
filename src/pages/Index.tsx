@@ -4,10 +4,12 @@ import Navigation from '../components/Navigation';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Projects from '../components/Projects';
+import FAQ from '../components/FAQ';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import CustomCursor from '../components/CustomCursor';
 import EnergyBlob from '../components/EnergyBlob';
+import FloatingActions from '../components/FloatingActions';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -50,11 +52,15 @@ const Index = () => {
           <Hero />
           <About />
           <Projects />
+          <FAQ />
           <Contact />
         </main>
         
         {/* Footer */}
         <Footer />
+        
+        {/* Floating Action Buttons */}
+        <FloatingActions />
       </div>
     </>
   );
