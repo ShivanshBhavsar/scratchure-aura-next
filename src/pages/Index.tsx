@@ -10,6 +10,7 @@ import Footer from '../components/Footer';
 import CustomCursor from '../components/CustomCursor';
 import EnergyBlob from '../components/EnergyBlob';
 import FloatingActions from '../components/FloatingActions';
+import FloatingRobot from '../components/FloatingRobot';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -38,6 +39,9 @@ const Index = () => {
       
       {/* Energy Blob */}
       <EnergyBlob />
+      
+      {/* Floating Robot */}
+      <FloatingRobot />
       
       {/* Preloader */}
       {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
