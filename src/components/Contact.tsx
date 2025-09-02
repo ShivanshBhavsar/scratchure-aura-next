@@ -196,15 +196,21 @@ const Contact = () => {
             </div>
 
             <div className="space-y-4">
-              <div className="glass p-4 rounded-lg hover:glow-cyan transition-all duration-300">
+              <a 
+                href="mailto:scratchuretechnologies@gmail.com"
+                className="glass p-4 rounded-lg hover:glow-cyan transition-all duration-300 block"
+              >
                 <h4 className="font-semibold mb-1">Email</h4>
                 <p className="text-cyber-cyan">scratchuretechnologies@gmail.com</p>
-              </div>
+              </a>
 
-              <div className="glass p-4 rounded-lg hover:glow-cyan transition-all duration-300">
+              <a 
+                href="tel:+917000849679"
+                className="glass p-4 rounded-lg hover:glow-cyan transition-all duration-300 block"
+              >
                 <h4 className="font-semibold mb-1">Phone</h4>
-                <p className="text-cyber-cyan">7000849679</p>
-              </div>
+                <p className="text-cyber-cyan">+91 7000849679</p>
+              </a>
 
               <div className="glass p-4 rounded-lg hover:glow-cyan transition-all duration-300">
                 <h4 className="font-semibold mb-1">Location</h4>

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { InstagramLogo, LinkedinLogo, GithubLogo } from 'phosphor-react';
+import { InstagramLogo, LinkedinLogo, EnvelopeSimple } from 'phosphor-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -109,10 +109,10 @@ const Footer = () => {
                 />
               </a>
               <a 
-                href="#" 
+                href="mailto:scratchuretechnologies@gmail.com"
                 className="glass p-3 rounded-lg hover:glow-cyan transition-all duration-300 hover:scale-110 group"
               >
-                <GithubLogo 
+                <EnvelopeSimple 
                   size={20} 
                   className="text-cyber-cyan group-hover:text-cyber-pink transition-colors duration-300" 
                 />
