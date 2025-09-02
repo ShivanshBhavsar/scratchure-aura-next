@@ -146,20 +146,9 @@ const Projects = () => {
                     {project.title}
                   </h3>
 
-                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                  <p className="text-muted-foreground text-sm leading-relaxed">
                     {project.description}
                   </p>
-
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, index) => (
-                      <span 
-                        key={index}
-                        className="text-xs px-2 py-1 bg-cyber-purple/20 text-cyber-purple rounded-full border border-cyber-purple/30"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
                 </div>
               </div>
             ))}
@@ -199,25 +188,9 @@ const Projects = () => {
                     {project.title}
                   </h3>
 
-                  <p className="text-muted-foreground text-sm mb-3 leading-relaxed">
+                  <p className="text-muted-foreground text-sm leading-relaxed">
                     {project.description}
                   </p>
-
-                  <div className="flex flex-wrap gap-1">
-                    {project.tech.slice(0, 3).map((tech, index) => (
-                      <span 
-                        key={index}
-                        className="text-xs px-2 py-1 bg-cyber-purple/20 text-cyber-purple rounded-full border border-cyber-purple/30"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                    {project.tech.length > 3 && (
-                      <span className="text-xs text-muted-foreground">
-                        +{project.tech.length - 3} more
-                      </span>
-                    )}
-                  </div>
                 </div>
               </div>
             ))}

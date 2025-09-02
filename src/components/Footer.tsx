@@ -124,7 +124,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-8 pt-8 border-t border-glass-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm">
-            © 2024 Scratchure Technologies. All rights reserved.
+            © 2025 Scratchure Technologies. All rights reserved.
           </p>
           <p className="text-muted-foreground text-sm">
             Built with passion for innovation

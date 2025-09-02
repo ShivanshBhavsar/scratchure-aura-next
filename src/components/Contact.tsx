@@ -212,30 +212,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Social Links */}
-            <div>
-              <h4 className="font-semibold mb-4">Connect With Us</h4>
-              <div className="flex gap-4">
-                <a 
-                  href="#" 
-                  className="glass p-3 rounded-lg hover:glow-cyan transition-all duration-300 hover:scale-110 group"
-                >
-                  <InstagramLogo 
-                    size={20} 
-                    className="text-cyber-cyan group-hover:text-cyber-pink transition-colors duration-300" 
-                  />
-                </a>
-                <a 
-                  href="#" 
-                  className="glass p-3 rounded-lg hover:glow-cyan transition-all duration-300 hover:scale-110 group"
-                >
-                  <LinkedinLogo 
-                    size={20} 
-                    className="text-cyber-cyan group-hover:text-cyber-pink transition-colors duration-300" 
-                  />
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
