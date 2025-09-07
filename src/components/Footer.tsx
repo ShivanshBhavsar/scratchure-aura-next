@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { InstagramLogo, LinkedinLogo, EnvelopeSimple } from 'phosphor-react';
+import { InstagramLogo, LinkedinLogo, EnvelopeSimple, Phone, MapPin } from 'phosphor-react';
+import scratchureLogo from '../assets/scratchure-logo.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,12 +56,17 @@ const Footer = () => {
         ref={contentRef}
         className="container mx-auto max-w-6xl"
       >
-        <div className="grid lg:grid-cols-3 gap-8 items-center">
+        <div className="grid lg:grid-cols-4 gap-8">
           {/* Logo & Description */}
           <div className="lg:col-span-1">
-            <h3 className="text-2xl font-bold text-glow-cyan mb-3">
-              SCRATCHURE
-            </h3>
+            <div className="flex items-center mb-4">
+              <img 
+                src={scratchureLogo} 
+                alt="Scratchure Technologies" 
+                className="w-10 h-10 object-contain"
+              />
+              <span className="ml-2 text-xl font-bold text-glow-cyan">SCRATCHURE</span>
+            </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Crafting cutting-edge digital solutions with futuristic innovation 
               and premium technology expertise.
@@ -68,13 +74,14 @@ const Footer = () => {
           </div>
 
           {/* Navigation Links */}
-          <div className="lg:col-span-1 flex justify-center">
-            <div className="flex flex-wrap gap-6 justify-center lg:justify-start">
+          <div className="lg:col-span-1">
+            <h4 className="text-lg font-semibold text-cyber-cyan mb-4">Quick Links</h4>
+            <div className="flex flex-col gap-3">
               {navLinks.map((link, index) => (
                 <button
                   key={index}
                   onClick={() => scrollToSection(link.href)}
-                  className="text-muted-foreground hover:text-cyber-cyan transition-colors duration-300 relative group"
+                  className="text-muted-foreground hover:text-cyber-cyan transition-colors duration-300 text-left group"
                 >
                   {link.label}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyber-cyan transition-all duration-300 group-hover:w-full"></span>
@@ -83,14 +90,41 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Contact Info */}
+          <div className="lg:col-span-1">
+            <h4 className="text-lg font-semibold text-cyber-cyan mb-4">Contact Info</h4>
+            <div className="space-y-3">
+              <a 
+                href="mailto:scratchuretechnologies@gmail.com"
+                className="flex items-center gap-3 text-muted-foreground hover:text-cyber-cyan transition-colors duration-300"
+              >
+                <EnvelopeSimple size={16} />
+                <span className="text-sm">scratchuretechnologies@gmail.com</span>
+              </a>
+              <a 
+                href="tel:+917000849679"
+                className="flex items-center gap-3 text-muted-foreground hover:text-cyber-cyan transition-colors duration-300"
+              >
+                <Phone size={16} />
+                <span className="text-sm">+91 7000849679</span>
+              </a>
+              <div className="flex items-center gap-3 text-muted-foreground">
+                <MapPin size={16} />
+                <span className="text-sm">Ratlam, MP, India</span>
+              </div>
+            </div>
+          </div>
+
           {/* Social Links */}
-          <div className="lg:col-span-1 flex justify-center lg:justify-end">
+          <div className="lg:col-span-1">
+            <h4 className="text-lg font-semibold text-cyber-cyan mb-4">Follow Us</h4>
             <div className="flex gap-4">
               <a 
                 href="https://www.instagram.com/scratchure_technologies/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="glass p-3 rounded-lg hover:glow-cyan transition-all duration-300 hover:scale-110 group"
+                title="Instagram"
               >
                 <InstagramLogo 
                   size={20} 
@@ -102,6 +136,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="glass p-3 rounded-lg hover:glow-cyan transition-all duration-300 hover:scale-110 group"
+                title="LinkedIn"
               >
                 <LinkedinLogo 
                   size={20} 
@@ -111,6 +146,7 @@ const Footer = () => {
               <a 
                 href="mailto:scratchuretechnologies@gmail.com"
                 className="glass p-3 rounded-lg hover:glow-cyan transition-all duration-300 hover:scale-110 group"
+                title="Email"
               >
                 <EnvelopeSimple 
                   size={20} 
@@ -122,12 +158,9 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-8 pt-8 border-t border-glass-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-12 pt-8 border-t border-glass-white/10 text-center">
           <p className="text-muted-foreground text-sm">
             © 2025 Scratchure Technologies. All rights reserved.
-          </p>
-          <p className="text-muted-foreground text-sm">
-            Built with passion for innovation
           </p>
         </div>
       </div>

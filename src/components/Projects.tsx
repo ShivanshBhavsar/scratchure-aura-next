@@ -8,6 +8,10 @@ import project3 from '../assets/project-3.jpg';
 import project4 from '../assets/project-4.jpg';
 import project5 from '../assets/project-5.jpg';
 import project6 from '../assets/project-6.jpg';
+import shabellaLogo from '../assets/shabella-logo.png';
+import posWallaLogo from '../assets/pos-walla-logo.png';
+import playPhotoLogo from '../assets/play-photo-creation-logo.png';
+import hiranyamLogo from '../assets/hiranyam-ayurveda-logo.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,7 +26,7 @@ const Projects = () => {
       title: "Shabella",
       description: "A skincare e-commerce website with modern design and seamless shopping experience.",
       image: project1,
-      tech: ["React", "TypeScript", "Tailwind", "Node.js"],
+      logo: shabellaLogo,
       category: "E-commerce",
       link: "https://www.shabellaa.com/"
     },
@@ -31,7 +35,7 @@ const Projects = () => {
       title: "POS Walla",
       description: "A Point of Sale software with inventory management and sales analytics features.",
       image: project2,
-      tech: ["React", "Node.js", "MongoDB", "Express"],
+      logo: posWallaLogo,
       category: "Software",
       link: "https://www.poswalla.com/"
     },
@@ -40,7 +44,7 @@ const Projects = () => {
       title: "Play Photo Creation",
       description: "A photography portfolio website showcasing creative visual storytelling.",
       image: project3,
-      tech: ["React", "Next.js", "Framer Motion", "Tailwind"],
+      logo: playPhotoLogo,
       category: "Portfolio"
     },
     {
@@ -48,7 +52,7 @@ const Projects = () => {
       title: "Hiranyam Ayurveda",
       description: "Ayurvedic skincare e-commerce platform with traditional wellness products.",
       image: project4,
-      tech: ["React", "TypeScript", "Stripe", "MongoDB"],
+      logo: hiranyamLogo,
       category: "E-commerce",
       link: "https://hiranyamayurveda.com/"
     }
@@ -129,6 +133,13 @@ const Projects = () => {
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute top-4 left-4">
+                    <img 
+                      src={project.logo} 
+                      alt={`${project.title} logo`}
+                      className="w-12 h-12 object-contain bg-white/10 backdrop-blur-sm rounded-lg p-2"
+                    />
+                  </div>
                   <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <ArrowUpRight size={24} className="text-white" />
                   </div>
@@ -174,6 +185,13 @@ const Projects = () => {
                     className="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute top-3 left-3">
+                    <img 
+                      src={project.logo} 
+                      alt={`${project.title} logo`}
+                      className="w-10 h-10 object-contain bg-white/10 backdrop-blur-sm rounded-lg p-2"
+                    />
+                  </div>
                 </div>
 
                 <div className="p-4">

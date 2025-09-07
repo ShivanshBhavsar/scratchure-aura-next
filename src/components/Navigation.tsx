@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { List, X } from 'phosphor-react';
+import scratchureLogo from '../assets/scratchure-logo.png';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,8 +57,13 @@ const Navigation = () => {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <div className="text-xl font-bold text-glow-cyan">
-              SCRATCHURE
+            <div className="flex items-center">
+              <img 
+                src={scratchureLogo} 
+                alt="Scratchure Technologies" 
+                className="w-8 h-8 object-contain"
+              />
+              <span className="ml-2 text-lg font-bold text-glow-cyan">SCRATCHURE</span>
             </div>
 
             {/* Desktop Navigation */}
