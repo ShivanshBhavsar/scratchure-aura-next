@@ -50,140 +50,84 @@ const Footer = () => {
   return (
     <footer 
       ref={footerRef}
-      className="relative bg-space-dark border-t border-glass-white/10 py-12 px-6 overflow-hidden"
+      className="bg-background border-t border-border py-16 px-6"
     >
       <div 
         ref={contentRef}
         className="container mx-auto max-w-6xl"
       >
-        <div className="grid lg:grid-cols-4 gap-8">
-          {/* Logo & Description */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+          {/* Logo and Company Info */}
+          <div className="space-y-6">
+            <div className="flex items-center">
               <img 
                 src={scratchureLogo} 
                 alt="Scratchure Technologies" 
-                className="w-10 h-10 object-contain"
+                className="w-12 h-12 object-contain"
               />
-              <span className="ml-2 text-xl font-bold text-glow-cyan">SCRATCHURE</span>
             </div>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Crafting cutting-edge digital solutions with futuristic innovation 
-              and premium technology expertise.
+            <p className="text-muted-foreground leading-relaxed">
+              Premium IT solutions company delivering cutting-edge digital experiences with innovation and excellence.
             </p>
           </div>
 
-          {/* Navigation Links */}
-          <div className="lg:col-span-1">
-            <h4 className="text-lg font-semibold text-cyber-cyan mb-4">Quick Links</h4>
-            <div className="flex flex-col gap-3">
-              {navLinks.map((link, index) => (
-                <button
-                  key={index}
-                  onClick={() => scrollToSection(link.href)}
-                  className="text-muted-foreground hover:text-cyber-cyan transition-colors duration-300 text-left group"
-                >
-                  {link.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyber-cyan transition-all duration-300 group-hover:w-full"></span>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Contact Info */}
-          <div className="lg:col-span-1">
-            <h4 className="text-lg font-semibold text-cyber-cyan mb-4">Contact Info</h4>
+          {/* Contact Information */}
+          <div className="space-y-6">
+            <h3 className="text-lg font-semibold text-primary">Contact</h3>
             <div className="space-y-3">
               <a 
                 href="mailto:scratchuretechnologies@gmail.com"
-                className="flex items-center gap-3 text-muted-foreground hover:text-cyber-cyan transition-colors duration-300"
+                className="block text-muted-foreground hover:text-modern-blue transition-colors duration-200"
               >
-                <EnvelopeSimple size={16} />
-                <span className="text-sm">scratchuretechnologies@gmail.com</span>
+                scratchuretechnologies@gmail.com
               </a>
               <a 
                 href="tel:+917000849679"
-                className="flex items-center gap-3 text-muted-foreground hover:text-cyber-cyan transition-colors duration-300"
+                className="block text-muted-foreground hover:text-modern-blue transition-colors duration-200"
               >
-                <Phone size={16} />
-                <span className="text-sm">+91 7000849679</span>
+                +91 7000849679
               </a>
-              <div className="flex items-center gap-3 text-muted-foreground">
-                <MapPin size={16} />
-                <span className="text-sm">Ratlam, MP, India</span>
-              </div>
+              <p className="text-muted-foreground">Ratlam MP</p>
             </div>
           </div>
 
           {/* Social Links */}
-          <div className="lg:col-span-1">
-            <h4 className="text-lg font-semibold text-cyber-cyan mb-4">Follow Us</h4>
-            <div className="flex gap-4">
+          <div className="space-y-6">
+            <h3 className="text-lg font-semibold text-primary">Connect</h3>
+            <div className="flex space-x-4">
               <a 
-                href="https://www.instagram.com/scratchure_technologies/" 
+                href="https://www.instagram.com/scratchure_technologies/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass p-3 rounded-lg hover:glow-cyan transition-all duration-300 hover:scale-110 group"
-                title="Instagram"
+                className="modern-card p-3 hover-lift transition-all duration-200"
               >
-                <InstagramLogo 
-                  size={20} 
-                  className="text-cyber-cyan group-hover:text-cyber-pink transition-colors duration-300" 
-                />
+                <InstagramLogo size={20} className="text-modern-blue" />
               </a>
               <a 
-                href="https://www.linkedin.com/in/scratchure-technologies-588b2437a/" 
+                href="https://www.linkedin.com/in/scratchure-technologies-588b2437a/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass p-3 rounded-lg hover:glow-cyan transition-all duration-300 hover:scale-110 group"
-                title="LinkedIn"
+                className="modern-card p-3 hover-lift transition-all duration-200"
               >
-                <LinkedinLogo 
-                  size={20} 
-                  className="text-cyber-cyan group-hover:text-cyber-pink transition-colors duration-300" 
-                />
+                <LinkedinLogo size={20} className="text-modern-blue" />
               </a>
               <a 
                 href="mailto:scratchuretechnologies@gmail.com"
-                className="glass p-3 rounded-lg hover:glow-cyan transition-all duration-300 hover:scale-110 group"
-                title="Email"
+                className="modern-card p-3 hover-lift transition-all duration-200"
               >
-                <EnvelopeSimple 
-                  size={20} 
-                  className="text-cyber-cyan group-hover:text-cyber-pink transition-colors duration-300" 
-                />
+                <EnvelopeSimple size={20} className="text-modern-blue" />
               </a>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-glass-white/10 text-center">
-          <p className="text-muted-foreground text-sm">
+        {/* Copyright */}
+        <div className="border-t border-border pt-8">
+          <p className="text-center text-muted-foreground">
             © 2025 Scratchure Technologies. All rights reserved.
           </p>
         </div>
       </div>
-
-      {/* Floating Background Particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {Array.from({ length: 25 }).map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 bg-cyber-cyan rounded-full opacity-20 float"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 10}s`,
-              animationDuration: `${8 + Math.random() * 8}s`
-            }}
-          ></div>
-        ))}
-      </div>
-
-      {/* Background Glows */}
-      <div className="absolute bottom-0 left-1/4 w-64 h-32 bg-cyber-cyan/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-1/4 w-48 h-24 bg-cyber-purple/5 rounded-full blur-2xl"></div>
     </footer>
   );
 };

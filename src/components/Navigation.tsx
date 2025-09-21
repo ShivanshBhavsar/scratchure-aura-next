@@ -52,7 +52,7 @@ const Navigation = () => {
     <>
       <nav 
         ref={navRef}
-        className="fixed top-0 left-0 right-0 z-40 glass border-b border-glass-white/10"
+        className="fixed top-0 left-0 right-0 z-40 bg-background/80 backdrop-blur-md border-b border-border"
       >
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
@@ -63,7 +63,6 @@ const Navigation = () => {
                 alt="Scratchure Technologies" 
                 className="w-8 h-8 object-contain"
               />
-              <span className="ml-2 text-lg font-bold text-glow-cyan">SCRATCHURE</span>
             </div>
 
             {/* Desktop Navigation */}
@@ -72,10 +71,10 @@ const Navigation = () => {
                 <button
                   key={index}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-foreground hover:text-cyber-cyan transition-all duration-300 relative group"
+                  className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium relative group"
                 >
                   {item.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyber-cyan transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-modern-blue transition-all duration-200 group-hover:w-full"></span>
                 </button>
               ))}
             </div>
@@ -83,7 +82,7 @@ const Navigation = () => {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden text-foreground hover:text-cyber-cyan transition-colors duration-300"
+              className="md:hidden text-foreground hover:text-modern-blue transition-colors duration-200"
             >
               {isOpen ? <X size={24} /> : <List size={24} />}
             </button>
@@ -94,14 +93,14 @@ const Navigation = () => {
       {/* Mobile Menu */}
       <div 
         ref={menuRef}
-        className="fixed top-0 right-0 h-full w-full md:w-96 bg-space-dark/95 backdrop-blur-lg z-30 transform translate-x-full opacity-0"
+        className="fixed top-0 right-0 h-full w-full md:w-96 bg-background/95 backdrop-blur-lg z-30 transform translate-x-full opacity-0 border-l border-border"
       >
         <div className="flex flex-col items-center justify-center h-full space-y-8">
           {navItems.map((item, index) => (
             <button
               key={index}
               onClick={() => scrollToSection(item.href)}
-              className="text-2xl text-foreground hover:text-cyber-cyan transition-all duration-300 text-glow-cyan"
+              className="text-2xl text-foreground hover:text-modern-blue transition-colors duration-200 font-medium"
             >
               {item.label}
             </button>
@@ -112,7 +111,7 @@ const Navigation = () => {
       {/* Overlay */}
       {isOpen && (
         <div 
-          className="fixed inset-0 bg-black/50 z-20 md:hidden"
+          className="fixed inset-0 bg-background/50 z-20 md:hidden"
           onClick={() => setIsOpen(false)}
         ></div>
       )}

@@ -55,14 +55,14 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Custom Futuristic Colors
-				'cyber-cyan': 'hsl(var(--cyber-cyan))',
-				'cyber-purple': 'hsl(var(--cyber-purple))',
-				'cyber-pink': 'hsl(var(--cyber-pink))',
-				'neon-blue': 'hsl(var(--neon-blue))',
-				'neon-purple': 'hsl(var(--cyber-purple))',
-				'space-dark': 'hsl(var(--space-dark))',
-				'glass-white': 'hsl(var(--glass-white))',
+				// Modern Clean Colors
+				'modern-blue': 'hsl(var(--modern-blue))',
+				'modern-gray': 'hsl(var(--modern-gray))',
+				'modern-light': 'hsl(var(--modern-light))',
+				'accent-blue': 'hsl(var(--accent-blue))',
+				'text-primary': 'hsl(var(--text-primary))',
+				'text-secondary': 'hsl(var(--text-secondary))',
+				'hover-blue': 'hsl(var(--hover-blue))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -75,9 +75,15 @@ export default {
 				}
 			},
 			backgroundImage: {
-				'gradient-cyber': 'var(--gradient-cyber)',
+				'gradient-subtle': 'var(--gradient-subtle)',
 				'gradient-hero': 'var(--gradient-hero)',
-				'gradient-glow': 'var(--gradient-glow)',
+				'gradient-accent': 'var(--gradient-accent)',
+			},
+			boxShadow: {
+				'sm': 'var(--shadow-sm)',
+				'md': 'var(--shadow-md)',
+				'lg': 'var(--shadow-lg)',
+				'xl': 'var(--shadow-xl)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
