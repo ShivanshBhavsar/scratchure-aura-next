@@ -2,71 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Modern Minimalist Design System - Clean, sharp, and sophisticated
-All colors MUST be HSL. Focus on simplicity and elegance.
+/* Futuristic IT Company Design System - Inspired by space tech aesthetics
+All colors MUST be HSL. Glassmorphic and neon-glow focused.
 */
 
 @layer base {
   :root {
-    /* Modern Clean Theme */
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    /* Base Dark Space Theme */
+    --background: 220 25% 3%;
+    --foreground: 210 40% 98%;
 
-    /* Clean Cards */
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    /* Glassmorphic Cards */
+    --card: 220 25% 8%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover: 220 25% 8%;
+    --popover-foreground: 210 40% 98%;
 
-    /* Sharp Primary Blue */
-    --primary: 222 84% 4.9%;
-    --primary-foreground: 210 40% 98%;
+    /* Cyan Tech Primary */
+    --primary: 187 85% 65%;
+    --primary-foreground: 220 25% 3%;
 
-    /* Modern Secondary */
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 84% 4.9%;
+    /* Purple Tech Secondary */
+    --secondary: 260 65% 35%;
+    --secondary-foreground: 210 40% 98%;
 
-    /* Subtle Muted */
-    --muted: 210 40% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted Glass */
+    --muted: 220 25% 12%;
+    --muted-foreground: 215 20% 65%;
 
-    /* Clean Accent */
-    --accent: 210 40% 96%;
-    --accent-foreground: 222 84% 4.9%;
+    /* Neon Accent */
+    --accent: 280 85% 70%;
+    --accent-foreground: 220 25% 3%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 85% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    /* Minimal Borders */
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222 84% 4.9%;
+    /* Glass Borders */
+    --border: 220 25% 15%;
+    --input: 220 25% 12%;
+    --ring: 187 85% 65%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    /* Modern Color Palette */
-    --modern-blue: 217 91% 60%;
-    --modern-gray: 215 16% 47%;
-    --modern-light: 210 40% 96%;
-    --accent-blue: 214 100% 50%;
-    --text-primary: 240 10% 3.9%;
-    --text-secondary: 215 16% 47%;
+    /* Custom Futuristic Colors */
+    --cyber-cyan: 187 85% 65%;
+    --cyber-purple: 260 65% 35%;
+    --cyber-pink: 320 85% 70%;
+    --neon-blue: 220 85% 70%;
+    --space-dark: 220 25% 3%;
+    --glass-white: 210 40% 98%;
     
-    /* Clean Gradients */
-    --gradient-subtle: linear-gradient(135deg, hsl(0 0% 100%), hsl(210 40% 98%));
-    --gradient-hero: linear-gradient(135deg, hsl(210 40% 98%), hsl(0 0% 100%));
-    --gradient-accent: linear-gradient(135deg, hsl(217 91% 60% / 0.1), hsl(214 100% 50% / 0.1));
+    /* Gradients */
+    --gradient-cyber: linear-gradient(135deg, hsl(187 85% 65% / 0.3), hsl(260 65% 35% / 0.3));
+    --gradient-hero: linear-gradient(180deg, hsl(220 25% 3%), hsl(220 25% 8%));
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(187 85% 65% / 0.3), transparent 70%);
     
-    /* Modern Effects */
-    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1);
-    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1);
+    /* Glass Effects */
+    --glass-bg: hsl(220 25% 8% / 0.1);
+    --glass-border: hsl(210 40% 98% / 0.1);
+    --glass-shadow: 0 8px 32px hsl(220 25% 3% / 0.4);
     
-    /* Subtle Hover Effects */
-    --hover-blue: 217 91% 65%;
-    --hover-gray: 215 16% 52%;
+    /* Neon Glows */
+    --glow-cyan: 0 0 20px hsl(187 85% 65% / 0.5);
+    --glow-purple: 0 0 20px hsl(260 65% 35% / 0.5);
+    --glow-pink: 0 0 20px hsl(320 85% 70% / 0.5);
 
     --sidebar-background: 0 0% 98%;
 
@@ -86,41 +86,33 @@ All colors MUST be HSL. Focus on simplicity and elegance.
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
 
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 10% 3.9%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-    
-    /* Dark mode colors */
-    --modern-blue: 217 91% 65%;
-    --modern-gray: 240 5% 65%;
-    --modern-light: 240 3.7% 15.9%;
-    --text-primary: 0 0% 98%;
-    --text-secondary: 240 5% 65%;
-    
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -139,123 +131,108 @@ All colors MUST be HSL. Focus on simplicity and elegance.
 
   body {
     @apply bg-background text-foreground font-inter overflow-x-hidden;
-    cursor: auto;
+    cursor: none;
   }
 
-  /* Modern Scrollbar */
+  /* Custom Scrollbar */
   ::-webkit-scrollbar {
-    width: 4px;
+    width: 6px;
   }
   
   ::-webkit-scrollbar-track {
-    background: hsl(var(--modern-light));
+    background: hsl(var(--space-dark));
   }
   
   ::-webkit-scrollbar-thumb {
-    background: hsl(var(--modern-blue));
-    border-radius: 2px;
+    background: hsl(var(--cyber-cyan));
+    border-radius: 3px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--hover-blue));
+    background: hsl(var(--cyber-purple));
   }
 }
 
 @layer components {
-  /* Modern Clean Card */
-  .modern-card {
-    background: hsl(var(--card));
-    border: 1px solid hsl(var(--border));
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    transition: all 0.2s ease;
+  /* Glass Morphism */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
   }
   
-  .modern-card:hover {
-    box-shadow: var(--shadow-md);
-    border-color: hsl(var(--modern-blue) / 0.3);
+  /* Glow Effects */
+  .glow-cyan {
+    box-shadow: var(--glow-cyan);
   }
   
-  /* Subtle Hover Effects */
-  .hover-lift {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  .glow-purple {
+    box-shadow: var(--glow-purple);
   }
   
-  .hover-lift:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+  .glow-pink {
+    box-shadow: var(--glow-pink);
   }
   
-  /* Modern Button Styles */
-  .btn-primary {
-    background: hsl(var(--modern-blue));
-    color: white;
-    border-radius: var(--radius);
-    padding: 0.75rem 1.5rem;
-    font-weight: 600;
-    transition: all 0.2s ease;
-    border: none;
+  /* Text Glow */
+  .text-glow-cyan {
+    text-shadow: 0 0 10px hsl(var(--cyber-cyan) / 0.8);
   }
   
-  .btn-primary:hover {
-    background: hsl(var(--hover-blue));
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-md);
+  .text-glow-purple {
+    text-shadow: 0 0 10px hsl(var(--cyber-purple) / 0.8);
   }
   
-  .btn-secondary {
-    background: transparent;
-    color: hsl(var(--modern-blue));
-    border: 2px solid hsl(var(--modern-blue));
-    border-radius: var(--radius);
-    padding: 0.75rem 1.5rem;
-    font-weight: 600;
-    transition: all 0.2s ease;
+  /* Floating Animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
   }
   
-  .btn-secondary:hover {
-    background: hsl(var(--modern-blue));
-    color: white;
-    transform: translateY(-1px);
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
   }
   
-  /* Clean Typography */
-  .text-gradient {
-    background: linear-gradient(135deg, hsl(var(--modern-blue)), hsl(var(--accent-blue)));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  /* Pulse Glow */
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite alternate;
   }
   
-  /* Minimal Animations */
-  .fade-in {
-    animation: fadeIn 0.6s ease-out;
+  @keyframes pulseGlow {
+    from { box-shadow: 0 0 20px hsl(var(--cyber-cyan) / 0.3); }
+    to { box-shadow: 0 0 40px hsl(var(--cyber-cyan) / 0.8); }
   }
   
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+  /* Blur to Clear Animation */
+  .blur-to-clear {
+    filter: blur(10px);
+    opacity: 0;
+    animation: blurToClear 1s ease-out forwards;
   }
   
-  .slide-up {
-    animation: slideUp 0.6s ease-out;
+  @keyframes blurToClear {
+    to {
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+
+  /* Custom Cursor */
+  .custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: hsl(var(--cyber-cyan) / 0.6);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: all 0.3s ease;
   }
   
-  @keyframes slideUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
-  /* Focus States */
-  .focus-ring {
-    outline: 2px solid hsl(var(--modern-blue) / 0.2);
-    outline-offset: 2px;
-  }
-  
-  /* Clean Dividers */
-  .divider {
-    height: 1px;
-    background: linear-gradient(90deg, transparent, hsl(var(--border)), transparent);
-    margin: 2rem 0;
+  .custom-cursor.hover {
+    transform: scale(2);
+    background: hsl(var(--cyber-pink) / 0.8);
   }
 }

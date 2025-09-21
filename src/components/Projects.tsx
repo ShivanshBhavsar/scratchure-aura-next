@@ -103,12 +103,12 @@ const Projects = () => {
     <section 
       id="projects" 
       ref={sectionRef}
-      className="py-24 px-6 bg-background"
+      className="py-20 px-6 bg-space-dark relative overflow-hidden"
     >
       <div className="container mx-auto max-w-7xl">
         <h2 
           ref={titleRef}
-          className="text-4xl lg:text-5xl font-black text-center mb-16 text-gradient"
+          className="text-4xl lg:text-6xl font-bold text-center mb-16 text-glow-cyan"
         >
           Featured Projects
         </h2>
@@ -123,7 +123,7 @@ const Projects = () => {
             {projects.map((project) => (
               <div
                 key={project.id}
-                className="flex-shrink-0 w-80 modern-card overflow-hidden hover-lift group cursor-pointer"
+                className="flex-shrink-0 w-80 glass rounded-xl overflow-hidden hover:glow-cyan transition-all duration-500 group cursor-pointer transform hover:scale-105"
                 onClick={() => project.link && window.open(project.link, '_blank')}
               >
                 <div className="relative overflow-hidden">

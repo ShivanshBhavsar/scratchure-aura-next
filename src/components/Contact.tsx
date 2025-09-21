@@ -102,12 +102,12 @@ const Contact = () => {
     <section 
       id="contact" 
       ref={sectionRef}
-      className="py-24 px-6 bg-gradient-subtle"
+      className="py-20 px-6 bg-gradient-hero relative overflow-hidden"
     >
       <div className="container mx-auto max-w-4xl">
         <h2 
           ref={titleRef}
-          className="text-4xl lg:text-5xl font-black text-center mb-16 text-gradient"
+          className="text-4xl lg:text-6xl font-bold text-center mb-16 text-glow-cyan"
         >
           Get In Touch
         </h2>
@@ -128,7 +128,7 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder="Your Name"
                   required
-                  className="w-full px-4 py-3 bg-background border border-border rounded-md text-foreground placeholder-muted-foreground focus:border-modern-blue focus:ring-2 focus:ring-modern-blue/20 transition-all duration-200 outline-none"
+                  className="w-full px-4 py-3 glass rounded-lg bg-transparent border border-glass-white/20 text-foreground placeholder-muted-foreground focus:border-cyber-cyan focus:glow-cyan transition-all duration-300 outline-none"
                 />
               </div>
 
@@ -140,7 +140,7 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder="Your Email"
                   required
-                  className="w-full px-4 py-3 bg-background border border-border rounded-md text-foreground placeholder-muted-foreground focus:border-modern-blue focus:ring-2 focus:ring-modern-blue/20 transition-all duration-200 outline-none"
+                  className="w-full px-4 py-3 glass rounded-lg bg-transparent border border-glass-white/20 text-foreground placeholder-muted-foreground focus:border-cyber-cyan focus:glow-cyan transition-all duration-300 outline-none"
                 />
               </div>
 
@@ -152,7 +152,7 @@ const Contact = () => {
                   placeholder="Your Message"
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-background border border-border rounded-md text-foreground placeholder-muted-foreground focus:border-modern-blue focus:ring-2 focus:ring-modern-blue/20 transition-all duration-200 outline-none resize-none"
+                  className="w-full px-4 py-3 glass rounded-lg bg-transparent border border-glass-white/20 text-foreground placeholder-muted-foreground focus:border-cyber-cyan focus:glow-cyan transition-all duration-300 outline-none resize-none"
                 />
               </div>
 
@@ -160,7 +160,7 @@ const Contact = () => {
                 ref={submitRef}
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed group"
+                className="w-full glass glow-cyan px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:glow-purple hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed group"
               >
                 <span className="flex items-center justify-center gap-2">
                   {isSubmitting ? (
@@ -185,36 +185,36 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold mb-4 text-gradient">
+              <h3 className="text-2xl font-bold mb-4 text-glow-purple">
                 Let's Build Something Amazing
               </h3>
               <p className="text-muted-foreground leading-relaxed">
                 Ready to transform your ideas into cutting-edge digital solutions? 
                 Get in touch and let's discuss how we can bring your vision to life 
-                with our modern technology expertise.
+                with our premium technology expertise.
               </p>
             </div>
 
             <div className="space-y-4">
               <a 
                 href="mailto:scratchuretechnologies@gmail.com"
-                className="modern-card p-6 hover-lift transition-all duration-200 block"
+                className="glass p-4 rounded-lg hover:glow-cyan transition-all duration-300 block"
               >
-                <h4 className="font-semibold mb-1 text-primary">Email</h4>
-                <p className="text-modern-blue">scratchuretechnologies@gmail.com</p>
+                <h4 className="font-semibold mb-1">Email</h4>
+                <p className="text-cyber-cyan">scratchuretechnologies@gmail.com</p>
               </a>
 
               <a 
                 href="tel:+917000849679"
-                className="modern-card p-6 hover-lift transition-all duration-200 block"
+                className="glass p-4 rounded-lg hover:glow-cyan transition-all duration-300 block"
               >
-                <h4 className="font-semibold mb-1 text-primary">Phone</h4>
-                <p className="text-modern-blue">+91 7000849679</p>
+                <h4 className="font-semibold mb-1">Phone</h4>
+                <p className="text-cyber-cyan">+91 7000849679</p>
               </a>
 
-              <div className="modern-card p-6 hover-lift transition-all duration-200">
-                <h4 className="font-semibold mb-1 text-primary">Location</h4>
-                <p className="text-modern-blue">Ratlam MP</p>
+              <div className="glass p-4 rounded-lg hover:glow-cyan transition-all duration-300">
+                <h4 className="font-semibold mb-1">Location</h4>
+                <p className="text-cyber-cyan">Ratlam MP</p>
               </div>
             </div>
 

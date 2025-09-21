@@ -130,47 +130,49 @@ const About = () => {
     <section 
       id="about" 
       ref={sectionRef}
-      className="py-24 px-6 bg-gradient-subtle"
+      className="py-20 px-6 bg-gradient-hero relative overflow-hidden"
     >
       <div className="container mx-auto max-w-6xl">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image Section */}
           <div ref={imageRef} className="relative">
-            <div className="relative hover-lift">
-              <img 
-                src={aboutImage} 
-                alt="Scratchure Technologies Team" 
-                className="w-full h-80 lg:h-96 object-cover rounded-lg shadow-lg"
-              />
-              <div className="absolute inset-0 bg-gradient-accent rounded-lg opacity-20"></div>
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-cyber rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div className="relative glass rounded-full p-4 glow-cyan hover:glow-purple transition-all duration-500 transform hover:scale-105 hover:rotate-3">
+                <img 
+                  src={aboutImage} 
+                  alt="Scratchure Technologies Team" 
+                  className="w-full h-64 lg:h-80 object-cover rounded-full"
+                />
+              </div>
             </div>
           </div>
 
           {/* Content Section */}
-          <div ref={contentRef} className="space-y-8">
+          <div ref={contentRef} className="space-y-6">
             <div>
-              <h2 className="text-4xl lg:text-5xl font-black mb-6 text-gradient">
+              <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-glow-cyan">
                 About Scratchure
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                We are a cutting-edge IT solutions company specializing in modern technology 
+                We are a cutting-edge IT solutions company specializing in futuristic technology 
                 implementations. Our team of expert developers and engineers craft premium digital 
-                experiences that drive innovation and business growth.
+                experiences that push the boundaries of innovation.
               </p>
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold mb-8 text-primary">Our Services</h3>
-              <div ref={servicesRef} className="grid grid-cols-2 gap-6">
+              <h3 className="text-2xl font-bold mb-6 text-glow-purple">Our Services</h3>
+              <div ref={servicesRef} className="grid grid-cols-2 gap-4">
                 {services.map((service, index) => (
                   <div 
                     key={index}
-                    className="modern-card p-6 hover-lift group cursor-pointer"
+                    className="glass p-4 rounded-lg hover:glow-cyan transition-all duration-300 group cursor-pointer"
                   >
-                    <div className="text-modern-blue mb-3 group-hover:text-accent-blue transition-colors duration-200">
+                    <div className="text-cyber-cyan mb-2 group-hover:text-cyber-pink transition-colors duration-300">
                       {service.icon}
                     </div>
-                    <h4 className="font-semibold mb-2 text-sm lg:text-base text-primary">
+                    <h4 className="font-semibold mb-1 text-sm lg:text-base">
                       {service.title}
                     </h4>
                     <p className="text-xs lg:text-sm text-muted-foreground">
@@ -183,6 +185,10 @@ const About = () => {
           </div>
         </div>
       </div>
+
+      {/* Background Effects */}
+      <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-cyber-cyan/10 rounded-full blur-xl float"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-cyber-purple/10 rounded-full blur-xl float" style={{ animationDelay: '2s' }}></div>
     </section>
   );
 };
